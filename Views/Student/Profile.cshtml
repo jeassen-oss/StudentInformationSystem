@@ -1,0 +1,33 @@
+﻿<!-- Name: Jeassen Andrew Silitonga -->
+<!-- NIM: 2481037 -->
+<!-- Course: Framework .NET Programming -->
+
+
+<!--Declare the Model-->
+@model StudentInformationSystem.Models.Student
+<!--Declare the Title foe browser-->
+@{
+    ViewData["Title"] = "Student Profile";
+}
+<h1>Student Profile</h1>
+<hr />
+<h1>Personal Information</h1>
+<p><strong>NIM:</strong>@Model.NIM</p>
+<p><strong>Name:</strong>@Model.Name</p>
+<p><strong>Major:</strong>@Model.Major</p>
+<p><strong>Semester:</strong>@Model.Semester</p>
+<p><strong>GPA:</strong>@Model.GPA.ToString("F2")</p>
+<hr />
+
+@if (Model.GPA >= 3.81)
+{
+    <p style="color: green"><b>Academic Status: CUMLAUDE</b></p>
+}
+else if (Model.GPA >= 2.67)
+{
+    <p style="color: green"><b>Academc Status : PASS</b></p>
+}
+else
+{
+    <p style="color : red"><b>Academic Status : NOT PASSED</b></p>
+}
